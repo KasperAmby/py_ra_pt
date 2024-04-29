@@ -27,7 +27,7 @@ servo1.ChangeDutyCycle(0)
 
 #Initialise a strips variable, provide the GPIO Data Pin
 #utilised and the amount of LED Nodes on strip and brightness (0 to 1 value)
-pixels1 = neopixel.NeoPixel(board.D21, 30, brightness=1)
+pixels1 = neopixel.NeoPixel(board.D21, 15, brightness=0.5)
 
 pixels1.fill((0, 220, 0))
 
