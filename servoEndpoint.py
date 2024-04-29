@@ -1,6 +1,8 @@
 from flask import Flask, request
 import RPi.GPIO as GPIO
 import time
+import board
+import neopixel
 
 # Setup for first servo on pin 11
 GPIO.setmode(GPIO.BOARD)
@@ -19,6 +21,16 @@ servo1.ChangeDutyCycle(2)
 
 servo.ChangeDutyCycle(0)
 servo1.ChangeDutyCycle(0)
+
+#Initialise a strips variable, provide the GPIO Data Pin
+#utilised and the amount of LED Nodes on strip and brightness (0 to 1 value)
+pixels1 = neopixel.NeoPixel(board.D18, 30, brightness=1)
+
+pixels1.fill((0, 220, 0))
+
+#LED Node 10 and colour Blue was selected
+pixels1[10] = (0, 20, 255)
+
 
 app = Flask(__name__)
 
