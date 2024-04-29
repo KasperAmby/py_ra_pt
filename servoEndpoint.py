@@ -14,8 +14,8 @@ servo = GPIO.PWM(17, 50)
 servo.start(0)
 
 # Setup for second servo on pin 12
-GPIO.setup(18, GPIO.OUT)
-servo1 = GPIO.PWM(18, 50)
+GPIO.setup(27, GPIO.OUT)
+servo1 = GPIO.PWM(27, 50)
 servo1.start(0)
 
 print("Turning back to 0 degrees")
@@ -27,7 +27,7 @@ servo1.ChangeDutyCycle(0)
 
 #Initialise a strips variable, provide the GPIO Data Pin
 #utilised and the amount of LED Nodes on strip and brightness (0 to 1 value)
-pixels1 = neopixel.NeoPixel(board.D24, 30, brightness=1)
+pixels1 = neopixel.NeoPixel(board.D18, 30, brightness=1)
 
 pixels1.fill((0, 220, 0))
 
