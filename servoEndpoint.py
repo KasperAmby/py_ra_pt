@@ -1,20 +1,18 @@
 from flask import Flask, request
 import RPi.GPIO as GPIO
-import RPi.GPIO as GPIO1
+import RPi.GPIO as GPI1
 import time
 import board
 import neopixel
 
-# Setup for first servo on pin 11
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(11, GPIO.OUT)
-servo = GPIO.PWM(11, 50)
+GPIO.setup(11,GPIO.OUT)
+servo = GPIO.PWM(11,50)
 servo.start(0)
 
-# Setup for second servo on pin 12
-GPIO1.setmode(GPIO1.BOARD)
-GPIO1.setup(12, GPIO1.OUT)
-servo1 = GPIO1.PWM(12, 50)
+GPI1.setmode(GPI1.BOARD)
+GPI1.setup(12,GPI1.OUT)
+servo1 = GPI1.PWM(12,50)
 servo1.start(0)
 
 print("Turning back to 0 degrees")
