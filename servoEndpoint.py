@@ -30,12 +30,14 @@ servo1.ChangeDutyCycle(0)
 pixels1 = neopixel.NeoPixel(board.D21, 15, brightness=0.5)
 pixels2 = neopixel.NeoPixel(board.D18, 15, brightness=0.5)
 
-pixels1.fill((100, 220, 20))
-pixels1.fill((100, 220, 20))
+
 
 
 
 app = Flask(__name__)
+
+pixels1.fill((100, 220, 20))
+pixels2.fill((100, 220, 20))
 
 @app.route('/post', methods=['POST'])
 def handle_post():
