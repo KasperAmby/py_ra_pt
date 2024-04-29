@@ -28,11 +28,11 @@ servo1.ChangeDutyCycle(0)
 #Initialise a strips variable, provide the GPIO Data Pin
 #utilised and the amount of LED Nodes on strip and brightness (0 to 1 value)
 pixels1 = neopixel.NeoPixel(board.D21, 15, brightness=0.5)
+pixels2 = neopixel.NeoPixel(board.D18, 15, brightness=0.5)
 
-pixels1.fill((0, 220, 0))
+pixels1.fill((100, 220, 20))
+pixels1.fill((100, 220, 20))
 
-#LED Node 10 and colour Blue was selected
-pixels1[10] = (0, 20, 255)
 
 
 app = Flask(__name__)
