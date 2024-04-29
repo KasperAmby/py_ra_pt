@@ -4,30 +4,18 @@ import time
 import board
 import neopixel
 
-# Prøver at rydde op først, men fortsæt forsigtigt, hvis en fejl opstår
-try:
-    GPIO.cleanup()
-except RuntimeError as e:
-    print(f"Cleanup warning: {e}")
-
-# Forsøger at sætte tilstand, men håndterer fejlen, hvis det ikke er muligt
-try:
-    GPIO.setmode(GPIO.BOARD)
-except ValueError as e:
-    print(f"GPIO mode already set. Continuing with existing mode: {e}")
-    
 # Cleanup GPIO settings and setup GPIO mode
 GPIO.cleanup()
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 
 # Setup for first servo on pin 11
-GPIO.setup(11, GPIO.OUT)
-servo = GPIO.PWM(11, 50)
+GPIO.setup(17, GPIO.OUT)
+servo = GPIO.PWM(17, 50)
 servo.start(0)
 
 # Setup for second servo on pin 12
-GPIO.setup(12, GPIO.OUT)
-servo1 = GPIO.PWM(12, 50)
+GPIO.setup(18, GPIO.OUT)
+servo1 = GPIO.PWM(18, 50)
 servo1.start(0)
 
 print("Turning back to 0 degrees")
@@ -39,7 +27,7 @@ servo1.ChangeDutyCycle(0)
 
 #Initialise a strips variable, provide the GPIO Data Pin
 #utilised and the amount of LED Nodes on strip and brightness (0 to 1 value)
-pixels1 = neopixel.NeoPixel(board.D18, 30, brightness=1)
+pixels1 = neopixel.NeoPixel(board.D16, 30, brightness=1)
 
 pixels1.fill((0, 220, 0))
 
