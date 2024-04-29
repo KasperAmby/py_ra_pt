@@ -5,11 +5,13 @@ import time
 import board
 import neopixel
 
+GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11,GPIO.OUT)
 servo = GPIO.PWM(11,50)
 servo.start(0)
 
+GPI1.cleanup()
 GPI1.setmode(GPI1.BOARD)
 GPI1.setup(12,GPI1.OUT)
 servo1 = GPI1.PWM(12,50)
