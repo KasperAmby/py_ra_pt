@@ -12,6 +12,7 @@ servo = GPIO.PWM(11, 50)
 servo.start(0)
 
 # Setup for second servo on pin 12
+GPIO1.setmode(GPIO1.BOARD)
 GPIO1.setup(12, GPIO1.OUT)
 servo1 = GPIO1.PWM(12, 50)
 servo1.start(0)
