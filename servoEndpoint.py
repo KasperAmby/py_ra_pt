@@ -4,6 +4,18 @@ import time
 import board
 import neopixel
 
+# Prøver at rydde op først, men fortsæt forsigtigt, hvis en fejl opstår
+try:
+    GPIO.cleanup()
+except RuntimeError as e:
+    print(f"Cleanup warning: {e}")
+
+# Forsøger at sætte tilstand, men håndterer fejlen, hvis det ikke er muligt
+try:
+    GPIO.setmode(GPIO.BOARD)
+except ValueError as e:
+    print(f"GPIO mode already set. Continuing with existing mode: {e}")
+    
 # Cleanup GPIO settings and setup GPIO mode
 GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
